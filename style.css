@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
+:root {
+  --padding: 2rem 0 1rem 0;
+
+  --clr-primary-hsl-400: 252, 100%, 67%;
+  --clr-primary-hsl-500: 256, 72%, 46%;
+  --clr-secondary-hsl-400: 241, 81%, 54%;
+  --clr-secondary-hsl-500: 241, 72%, 46%;
+
+  --clr-neutral-hsl-100: 0, 0%, 100%;
+  --clr-neutral-hsl-200: 221, 100%, 96%;
+  --clr-neutral-hsl-300: 241, 100%, 89%;
+  --clr-neutral-hsl-700: 224, 30%, 27%;
+
+  --clr-neutral-100: hsl(var(--clr-neutral-hsl-100));
+  --clr-neutral-200: hsl(var(--clr-neutral-hsl-200));
+  --clr-neutral-300: hsl(var(--clr-neutral-hsl-300));
+  --clr-neutral-700: hsl(var(--clr-neutral-hsl-700));
+
+  --clr-primary-400: hsl(var(--clr-primary-hsl-400));
+  --clr-primary-500: hsla(var(--clr-primary-hsl-500));
+  --clr-secondary-400: hsl(var(--clr-secondary-hsl-400));
+
+  --gradient-primary: linear-gradient(
+    var(--clr-primary-400),
+    var(--clr-secondary-400)
+  );
+
+  --gradient-to-transparent: linear-gradient(
+    var(--clr-primary-500),
+    hsl(var(--clr-secondary-hsl-500), 0)
+  );
+
+  --clr-accent-1: 0, 100%, 67%;
+  --clr-accent-2: 39, 100%, 56%;
+  --clr-accent-3: 166, 100%, 37%;
+  --clr-accent-4: 234, 85%, 45%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0%;
+}
+img,
+svg {
+  max-width: 100%;
+}
+
+section {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+.result-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 650px;
+  min-width: 35%;
+  border-radius: 24px;
+  font-family: "HankenGrotesk", sans-serif;
+  box-shadow: 0.5rem 1rem 3rem hsl(var(--clr-neutral-hsl-700), 0.2);
+  margin: 0 1rem;
+}
+.result-card {
+  background: var(--gradient-primary);
+  text-align: center;
+  border-radius: 24px;
+}
+.result-card {
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+}
+.result-card {
+  display: grid;
+  place-items: center;
+  padding: 2rem 2.3rem 0.5rem 2.3rem;
+}
+
+.result {
+  display: grid;
+  place-items: center;
+  max-width: 350px;
+  aspect-ratio: 1 / 1;
+  padding: 1rem 3rem;
+  border-radius: 50%;
+  background: var(--gradient-to-transparent);
+}
+.text-bold {
+  font-size: 4rem;
+  display: block;
+}
+.result-remarks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 0 2rem 0;
+}
+.result-remarks span {
+  font-size: 1.5rem;
+  display: block;
+  font-weight: 700;
+}
+.result-remarks p {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.summary-card {
+  padding: 2rem 1rem 1rem 1rem;
+}
+
+.summary-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  background-color: hsl(var(--item-color), 0.1);
+  padding: 1.5rem 1rem;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+.summary-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.summary-text {
+  color: hsl(var(--item-color));
+}
+.summary-detail svg {
+  stroke: hsl(var(--item-color));
+}
+.summary-detail[data-item-type="accent-1"] {
+  --item-color: var(--clr-accent-1);
+}
+.summary-detail[data-item-type="accent-2"] {
+  --item-color: var(--clr-accent-2);
+}
+.summary-detail[data-item-type="accent-3"] {
+  --item-color: var(--clr-accent-3);
+}
+.summary-detail[data-item-type="accent-4"] {
+  --item-color: var(--clr-accent-4);
+}
+.summary-marks span {
+  color: grey;
+}
+.btn {
+  display: block;
+  padding: 1rem 2rem;
+  background-color: hsl(0, 0%, 20%);
+  color: white;
+  border-radius: 100vh;
+  min-width: 100%;
+  font-size: 1rem;
+  margin: 1rem 0;
+  border: none;
+  font-weight: 700;
+}
+.btn:focus-visible,
+.btn:hover {
+  background-color: blue;
+  cursor: pointer;
+}
+/* --------------------------------------------------------------------------------------------------------------------------------
+UTILITY CLASSES
+--------------------------------------------------------------------------------------------------------------------------------
+ */
+
+.text-grey {
+  color: hsl(0, 2%, 79%);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.text-white {
+  color: white;
+}
+
+@media only screen and (max-width: 700px) {
+  .result-container {
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 450px;
+  }
+}
